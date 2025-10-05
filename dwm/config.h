@@ -12,8 +12,8 @@ static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const Bool viewontag         = True;
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = { "monospace:size=12" };
+static const char dmenufont[]       = "monospace:size=12";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -75,6 +75,7 @@ static const char *bn_up[] = {"bn_up.sh", NULL};
 static const char *bn_down[] = {"bn_down.sh", NULL};
 static const char *firefox[] = {"firefox", NULL};
 static const char *lf[] = {"st", "lf", NULL};
+static const char *shotgun[] = {"shotgun.sh", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -119,6 +120,7 @@ static const Key keys[] = {
 	{ MODKEY,			XK_bracketleft, spawn,	   {.v = bn_down } },
 	{ MODKEY,			XK_v,		spawn,	   {.v = firefox } },
 	{ MODKEY,			XK_Return,	spawn,	   {.v = lf } },
+	{ MODKEY|ShiftMask,		XK_s,		spawn,	   {.v = shotgun } },
 };
 
 /* button definitions */
