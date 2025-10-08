@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int gappx     = 11;       /* gap pixel between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -73,9 +73,12 @@ static const char *vol_up[] = {"vol_up.sh", NULL};
 static const char *vol_down[] = {"vol_down.sh", NULL};
 static const char *bn_up[] = {"bn_up.sh", NULL};
 static const char *bn_down[] = {"bn_down.sh", NULL};
-static const char *firefox[] = {"firefox", NULL};
+static const char *browser[] = {"browser.sh", NULL};
 static const char *lf[] = {"st", "lf", NULL};
 static const char *shotgun[] = {"shotgun.sh", NULL};
+static const char *shotfree[] = {"shotfree.sh", NULL};
+static const char *todo[] = {"todo.sh", NULL};
+static const char *todoedit[] = {"todoedit.sh", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -118,9 +121,12 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_minus,  spawn,          {.v = vol_down } },
 	{ MODKEY,			XK_bracketright, spawn,	   {.v = bn_up } },
 	{ MODKEY,			XK_bracketleft, spawn,	   {.v = bn_down } },
-	{ MODKEY,			XK_v,		spawn,	   {.v = firefox } },
+	{ MODKEY,			XK_s,		spawn,	   {.v = browser } },
 	{ MODKEY,			XK_Return,	spawn,	   {.v = lf } },
 	{ MODKEY|ShiftMask,		XK_s,		spawn,	   {.v = shotgun } },
+	{ MODKEY|ControlMask,		XK_s,		spawn,	   {.v = shotfree } },
+	{ MODKEY,			XK_z,	spawn,	   {.v = todo } },
+	{ MODKEY|ShiftMask,		XK_z,		spawn,	   {.v = todoedit } },
 };
 
 /* button definitions */

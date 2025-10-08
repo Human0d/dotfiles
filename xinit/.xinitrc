@@ -5,4 +5,5 @@ fcitx5 &
 picom &
 dunst &
 dwmblocks &
+feh --bg-scale ~/WP/green.png &
 exec dwm
