@@ -18,7 +18,9 @@
 
 // Define blocks for the status feed as X(icon, cmd, interval, signal).
 #define BLOCKS(X)             \
-  X("Vol:","vol_get.sh", 0, 11) \
-  X("Light:", "bn_get.sh", 0, 10)
+  X("Vol:","vol_get.sh", 3, 11) \
+  X("Light:", "bn_get.sh", 0, 10) \
+  X("", "mpd_get.sh", 5, 0) \
+  X("Time:", "date_get.sh", 60, 0) \
 
 #endif  // CONFIG_H

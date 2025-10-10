@@ -79,6 +79,7 @@ static const char *shotgun[] = {"shotgun.sh", NULL};
 static const char *shotfree[] = {"shotfree.sh", NULL};
 static const char *todo[] = {"todo.sh", NULL};
 static const char *todoedit[] = {"todoedit.sh", NULL};
+static const char *date_get_notify[] = {"date_get_notify.sh", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -89,6 +90,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = date_get_notify } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.15} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.15} },
 	{ MODKEY|ShiftMask,                       XK_h,      setmfact,       {.f = -0.05} },
