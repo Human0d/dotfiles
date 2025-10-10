@@ -80,6 +80,8 @@ static const char *shotfree[] = {"shotfree.sh", NULL};
 static const char *todo[] = {"todo.sh", NULL};
 static const char *todoedit[] = {"todoedit.sh", NULL};
 static const char *date_get_notify[] = {"date_get_notify.sh", NULL};
+static const char *mpd_spawn[] = {"mpd_spawn.sh", NULL};
+static const char *mpd_kill[] = {"mpd_kill.sh", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -129,6 +131,8 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,		XK_s,		spawn,	   {.v = shotfree } },
 	{ MODKEY,			XK_z,	spawn,	   {.v = todo } },
 	{ MODKEY|ShiftMask,		XK_z,		spawn,	   {.v = todoedit } },
+	{ MODKEY|ShiftMask,		XK_n,		spawn,	   {.v = mpd_spawn } },
+	{ MODKEY|ControlMask,           XK_n,           spawn,     {.v = mpd_kill } },
 };
 
 /* button definitions */
