@@ -10,10 +10,10 @@ static const unsigned int systrayspacing = 0;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 0;        /* 0 means bottom bar */
+static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;
-static const char *fonts[]          = { "monospace:size=12" };
-static const char dmenufont[]       = "monospace:size=12";
+static const char *fonts[]          = { "monospace:size=10" };
+static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -78,7 +78,7 @@ static const char *lf[] = {"st", "lf", NULL};
 static const char *shotgun[] = {"shotgun.sh", NULL};
 static const char *shotfree[] = {"shotfree.sh", NULL};
 static const char *todo[] = {"todo.sh", NULL};
-static const char *todoedit[] = {"todoedit.sh", NULL};
+static const char *todo_edit[] = {"todo_edit.sh", NULL};
 static const char *date_get_notify[] = {"date_get_notify.sh", NULL};
 static const char *mpd_spawn[] = {"mpd_spawn.sh", NULL};
 static const char *mpd_kill[] = {"mpd_kill.sh", NULL};
@@ -133,9 +133,9 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_s,		spawn,	   {.v = shotgun } },
 	{ MODKEY|ControlMask,		XK_s,		spawn,	   {.v = shotfree } },
 	{ MODKEY,			XK_z,	spawn,	   {.v = todo } },
-	{ MODKEY|ShiftMask,		XK_z,		spawn,	   {.v = todoedit } },
-	{ MODKEY|ShiftMask,		XK_n,		spawn,	   {.v = mpd_spawn } },
-	{ MODKEY|ControlMask,           XK_n,           spawn,     {.v = mpd_kill } },
+	{ MODKEY|ShiftMask,		XK_z,		spawn,	   {.v = todo_edit } },
+	{ MODKEY|ShiftMask,		XK_m,		spawn,	   {.v = mpd_spawn } },
+	{ MODKEY|ControlMask,           XK_m,           spawn,     {.v = mpd_kill } },
 	{ MODKEY|ControlMask,           XK_p,           spawn,     {.v = powerctl } },
 };
 
