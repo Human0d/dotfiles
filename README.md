@@ -6,6 +6,7 @@
 
 - dwm
 - dwmblocks-async
+- dunst
 - st
 - lf
 - picom
