@@ -29,5 +29,5 @@ shotfree.sh is based on 'import' of 'imagemagick'
 
 todo.sh is based on 'sent' of suckless
 
-mpc_\*.sh & mpd_\*.sh are based on 'systemctl'
+mpc_\*.sh & mpd_\*.sh are based on 'systemctl' & 'mpd' & 'mpc' & 'ncmpcpp'
 
