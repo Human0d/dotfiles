@@ -82,12 +82,15 @@ static const char *todoedit[] = {"todoedit.sh", NULL};
 static const char *date_get_notify[] = {"date_get_notify.sh", NULL};
 static const char *mpd_spawn[] = {"mpd_spawn.sh", NULL};
 static const char *mpd_kill[] = {"mpd_kill.sh", NULL};
+static const char *browser_book[] = {"browser_book.sh", NULL};
+static const char *powerctl[] = {"powerctl.sh", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,             XK_slash, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY|ShiftMask,             XK_b,      spawn,           {.v = browser_book } },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
@@ -133,6 +136,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_z,		spawn,	   {.v = todoedit } },
 	{ MODKEY|ShiftMask,		XK_n,		spawn,	   {.v = mpd_spawn } },
 	{ MODKEY|ControlMask,           XK_n,           spawn,     {.v = mpd_kill } },
+	{ MODKEY|ControlMask,           XK_p,           spawn,     {.v = powerctl } },
 };
 
 /* button definitions */
