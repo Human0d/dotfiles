@@ -26,6 +26,7 @@ static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_white, col_green,  col_lime  },
+	[SchemeTitle]  = { col_gray4, col_gray1,  col_cyan  },
 };
 
 /* tagging */
@@ -49,9 +50,9 @@ static const int refreshrate = 120;  /* refresh rate (per second) for client mov
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "[M]",      monocle },
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "[]",      tile },    /* first entry is default */
+	{ "M",      monocle },
+	{ "><",      NULL },    /* no layout function means floating behavior */
 };
 
 /* key definitions */
