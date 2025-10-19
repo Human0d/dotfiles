@@ -18,7 +18,7 @@
 
 // Define blocks for the status feed as X(icon, cmd, interval, signal).
 #define BLOCKS(X)             \
-  X("Free:", "realfree_percent.sh", 4, 0) \
+  X("Free:", "realfree_percent.sh", 8, 0) \
   X("Vol:","vol_get.sh", 3, 11) \
   X("Light:", "bn_get.sh", 0, 10) \
   X("", "mpc_title_get.sh", 3, 12) \

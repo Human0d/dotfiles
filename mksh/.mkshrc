@@ -5,3 +5,5 @@ alias so='source ~/.mkshrc'
 alias dmci='doas make clean install'
 alias x='startx'
 alias lg='lazygit'
+
+PS1=$(echo -e "\033[32m\$PWD\033[0m \$ ")
