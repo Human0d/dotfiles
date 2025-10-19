@@ -1,0 +1,7 @@
+alias ls='ls --color=auto'
+alias ff='fastfetch'
+alias c='clear'
+alias so='source ~/.mkshrc'
+alias dmci='doas make clean install'
+alias x='startx'
+alias lg='lazygit'

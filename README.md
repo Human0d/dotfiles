@@ -11,6 +11,7 @@
 - lf
 - picom
 - xinit
+- mksh
 
 ( i use 'GNU stow' to symlink these dotfiles -> config path )
 

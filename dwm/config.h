@@ -1,8 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 4;        /* border pixel of windows */
-static const unsigned int gappx     = 11;       /* gap pixel between windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int gappx     = 0;       /* gap pixel between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft = 0;    /* 0: systray in the right corner, >0: systray on left of status text */
@@ -12,8 +12,8 @@ static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;
-static const char *fonts[]          = { "monospace:size=11" };
-static const char dmenufont[]       = "monospace:size=11";
+static const char *fonts[]          = { "monospace:size=9" };
+static const char dmenufont[]       = "monospace:size=9";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -49,8 +49,8 @@ static const int refreshrate = 120;  /* refresh rate (per second) for client mov
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[M]",      monocle },
 	{ "[]=",      tile },    /* first entry is default */
+	{ "[M]",      monocle },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 };
 
@@ -73,7 +73,8 @@ static const char *vol_up[] = {"vol_up.sh", NULL};
 static const char *vol_down[] = {"vol_down.sh", NULL};
 static const char *bn_up[] = {"bn_up.sh", NULL};
 static const char *bn_down[] = {"bn_down.sh", NULL};
-static const char *browser[] = {"browser.sh", NULL};
+static const char *browser[] = {"chromium", NULL};
+static const char *browser_sh[] = {"browser.sh", NULL};
 static const char *lf[] = {"st", "lf", NULL};
 static const char *shotgun[] = {"shotgun.sh", NULL};
 static const char *shotfree[] = {"shotfree.sh", NULL};
@@ -96,16 +97,16 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = date_get_notify } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.15} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.15} },
+	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.10} },
+	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.10} },
 	{ MODKEY|ShiftMask,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY|ShiftMask,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,             XK_q,      killclient,     {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
@@ -128,6 +129,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_minus,  spawn,          {.v = vol_down } },
 	{ MODKEY,			XK_bracketright, spawn,	   {.v = bn_up } },
 	{ MODKEY,			XK_bracketleft, spawn,	   {.v = bn_down } },
+	{ MODKEY|Mod1Mask,              XK_s,           spawn,     {.v = browser_sh } },
 	{ MODKEY,			XK_s,		spawn,	   {.v = browser } },
 	{ MODKEY,			XK_Return,	spawn,	   {.v = lf } },
 	{ MODKEY|ShiftMask,		XK_s,		spawn,	   {.v = shotgun } },
