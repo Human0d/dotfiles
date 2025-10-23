@@ -8,7 +8,7 @@ static const unsigned int systrayonleft = 0;    /* 0: systray in the right corne
 static const unsigned int systrayspacing = 1;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;        /* 0 means no systray */
-static const int showbar            = 1;        /* 0 means no bar */
+static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
@@ -17,10 +17,12 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
+static const char col_black[]        = "#181818";
+static const char col_blue[]        = "#7ec6ff";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray1 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeNorm] = { col_gray3, col_gray1, col_black },
+	[SchemeSel]  = { col_gray4, col_cyan,  col_blue  },
 };
 
 /* tagging */
@@ -120,13 +122,13 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_minus,  spawn,          {.v = vol_down } },
 	{ MODKEY,			XK_bracketright, spawn,	   {.v = bn_up } },
 	{ MODKEY,			XK_bracketleft, spawn,	   {.v = bn_down } },
-	{ MODKEY,              XK_x,           spawn,     {.v = browser_sh } },
-	{ MODKEY|Mod1Mask,			XK_x,		spawn,	   {.v = browser } },
+	{ MODKEY,              XK_z,           spawn,     {.v = browser_sh } },
+	{ MODKEY|ShiftMask,			XK_z,		spawn,	   {.v = browser } },
 	{ MODKEY,			XK_slash,	spawn,	   {.v = lf } },
 	{ MODKEY|ShiftMask,		XK_s,		spawn,	   {.v = shotgun } },
 	{ MODKEY|ControlMask,		XK_s,		spawn,	   {.v = shotfree } },
-	{ MODKEY,			XK_z,	spawn,	   {.v = todo } },
-	{ MODKEY|ShiftMask,		XK_z,		spawn,	   {.v = todo_edit } },
+	{ MODKEY,			XK_x,	spawn,	   {.v = todo } },
+	{ MODKEY|ShiftMask,		XK_x,		spawn,	   {.v = todo_edit } },
 	{ MODKEY|ShiftMask,		XK_m,		spawn,	   {.v = mpd_spawn } },
 	{ MODKEY|ControlMask,           XK_m,           spawn,     {.v = mpd_kill } },
 	{ MODKEY|ControlMask,           XK_p,           spawn,     {.v = powerctl } },
