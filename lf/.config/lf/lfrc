@@ -110,3 +110,5 @@ cmd zip ${{
 map D delete
 
 map e open
+
+set number
